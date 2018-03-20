@@ -8,15 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.statitTextView.text = @"";
 }
 
 
@@ -26,4 +22,9 @@
 }
 
 
+- (IBAction)pressedButton:(id)sender {
+    NSLog(@"Clicked Button");
+    NSString* textInTextField = self.editTextField.text;
+    self.statitTextView.text = [NSString stringWithFormat:@"%@\n%@", self.statitTextView.text, textInTextField];
+}
 @end
